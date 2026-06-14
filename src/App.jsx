@@ -3,7 +3,6 @@ import { Routes, Route } from 'react-router-dom'
 import Navbar from './components/Navbar'
 import Home from './pages/Home'
 import Projects from './pages/Projects'
-import Gallery from './pages/Gallery'
 import Certificates from './pages/Certificates'
 
 import Resume from './pages/Resume'
@@ -20,7 +19,6 @@ export default function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/projects" element={<Projects />} />
-          <Route path="/gallery" element={<Gallery />} />
           <Route path="/skills" element={<SkillNetwork />} />
           <Route path="/certificates" element={<Certificates />} />
           <Route path="/resume" element={<Resume />} />
