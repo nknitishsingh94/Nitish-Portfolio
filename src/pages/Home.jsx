@@ -2,7 +2,7 @@ import React from 'react'
 import { motion } from 'framer-motion'
 
 // 🖼️ Import Assets
-const photo = 'https://github.com/nknitishsingh94.png'
+import photo from '../../public/IMG20250830164338.jpg'
 import githubLogo from '../../public/github.png'
 import linkedinLogo from '../../public/linkedin.png'
 import gmailLogo from '../../public/gmail.png'
