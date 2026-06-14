@@ -229,7 +229,7 @@ seeking opportunities to contribute to real-world full-stack projects.
           }}
         >
           <iframe
-            src="/resume.pdf"
+            src="/Nitish Resume (1).pdf"
             title="Nitish Singh Resume"
             style={{
               width: "100%",
@@ -242,7 +242,7 @@ seeking opportunities to contribute to real-world full-stack projects.
 
         {/* Download Button */}
         <motion.a
-          href="/resume.pdf"
+          href="/Nitish Resume (1).pdf"
           download
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
