@@ -230,7 +230,7 @@ seeking opportunities to contribute to real-world full-stack projects.
         >
           <iframe
             src="/resume.pdf"
-            title="Kunj Desai Resume"
+            title="Nitish Singh Resume"
             style={{
               width: "100%",
               height: "650px",
