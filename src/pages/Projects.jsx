@@ -54,6 +54,13 @@ const PROJECTS = [
   }
 ]
 
+const getScreenshotUrl = (project) => {
+  if (project.live && project.live !== '#' && project.live.startsWith('http')) {
+    return `https://v1.screenshot.11ty.dev/${encodeURIComponent(project.live)}/medium/`;
+  }
+  return project.ss || '/portfolio.jpg';
+};
+
 export default function Projects() {
   return (
     <motion.section
@@ -97,7 +104,7 @@ export default function Projects() {
             >
               <motion.div className="ss" whileHover={{ scale: 1.05 }} style={{ borderRadius: 12, overflow: 'hidden' }}>
                 <img
-                  src={p.ss}
+                  src={getScreenshotUrl(p)}
                   alt={p.title}
                   style={{
                     width: '100%',
