@@ -109,7 +109,8 @@ export default function Projects() {
                   style={{
                     width: '100%',
                     height: '200px',
-                    objectFit: 'cover',
+                    objectFit: 'contain',
+                    backgroundColor: 'rgba(255, 255, 255, 0.03)',
                     borderRadius: 12
                   }}
                 />
