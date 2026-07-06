@@ -9,7 +9,7 @@ const PROJECTS = [
     ss: '/ISL.png',
     tech: ['React', 'Node.js', 'Express.js', 'MongoDB', 'Tailwind CSS'],
     live: 'https://property-x-seven.vercel.app/',
-    code: 'https://github.com/Nitish78004/PropertyX'
+    code: 'https://github.com/nknitishsingh94/PropertyX'
   },
 
   {

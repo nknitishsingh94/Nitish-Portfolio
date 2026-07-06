@@ -72,7 +72,7 @@ export default function Contact() {
   };
 
   const quickLinks = [
-    { img: githubLogo, title: "GitHub", link: "https://github.com/Nitish78004" },
+    { img: githubLogo, title: "GitHub", link: "https://github.com/nknitishsingh94" },
     {
       img: linkedinLogo,
       title: "LinkedIn",

@@ -195,7 +195,7 @@ seeking opportunities to contribute to real-world full-stack projects.
         >
           {[
             { name: "🏆 LeetCode", link: "https://leetcode.com/nitishsingh78004/" },
-            { name: "💻 GitHub", link: "https://github.com/Nitish78004" },
+            { name: "💻 GitHub", link: "https://github.com/nknitishsingh94" },
             { name: "💼 LinkedIn", link: "https://www.linkedin.com/in/nitishsingh27/" },
           ].map((site) => (
             <motion.a

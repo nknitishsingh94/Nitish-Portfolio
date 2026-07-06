@@ -18,7 +18,7 @@ export default function Home() {
   ]
 
   const quickLinks = [
-    { img: githubLogo, title: 'GitHub', link: 'https://github.com/Nitish78004' },
+    { img: githubLogo, title: 'GitHub', link: 'https://github.com/nknitishsingh94' },
     { img: linkedinLogo, title: 'LinkedIn', link: 'https://www.linkedin.com/in/nitishsingh27' },
     { img: gmailLogo, title: 'Email', link: 'nknitishsingh92@gmail.com' },
     { img: whatsappLogo, title: 'WhatsApp', link: 'https://wa.me/+918960322825' },
