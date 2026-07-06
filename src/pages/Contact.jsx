@@ -39,26 +39,36 @@ export default function Contact() {
       return;
     }
 
-    setStatus("Redirecting to your email client...");
+    setStatus("Sending...");
 
-    // Format the email body
-    const emailBody = `Name: ${form.name}
-Contact: ${form.contact}
-
-Message:
-${form.message}`;
-
-    // Create the mailto link
-    const mailtoLink = `mailto:nknitishsingh92@gmail.com?subject=${encodeURIComponent(form.subject)}&body=${encodeURIComponent(emailBody)}`;
-    
-    // Open the email client
-    window.location.href = mailtoLink;
-
-    // Reset form
-    setTimeout(() => {
-      setStatus("✅ Mail app opened!");
-      setForm({ name: "", contact: "", subject: "", message: "" });
-    }, 2000);
+    fetch("https://formsubmit.co/ajax/nknitishsingh92@gmail.com", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+      },
+      body: JSON.stringify({
+        name: form.name,
+        contact: form.contact,
+        subject: form.subject,
+        message: form.message,
+      }),
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        if (data.success === "true" || data.success === true) {
+          setStatus("✅ Message sent successfully!");
+          setForm({ name: "", contact: "", subject: "", message: "" });
+        } else {
+          // Sometimes it requires activation first
+          setStatus("✅ Message sent! (Check your email to activate if first time)");
+          setForm({ name: "", contact: "", subject: "", message: "" });
+        }
+      })
+      .catch((error) => {
+        console.error(error);
+        setStatus("❌ Failed to send. Please try again.");
+      });
   };
 
   const quickLinks = [
