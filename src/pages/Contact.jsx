@@ -39,30 +39,26 @@ export default function Contact() {
       return;
     }
 
-    setStatus("Sending...");
+    setStatus("Redirecting to your email client...");
 
-    emailjs.send(
-  import.meta.env.VITE_EMAILJS_SERVICE_ID,
-  import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
-  {
-    from_name: form.name,
-    contact_info: form.contact,
-    subject: form.subject,
-    message: form.message,
-  },
-  import.meta.env.VITE_EMAILJS_PUBLIC_KEY
-)
+    // Format the email body
+    const emailBody = `Name: ${form.name}
+Contact: ${form.contact}
 
-      .then(
-        () => {
-          setStatus("✅ Message sent successfully!");
-          setForm({ name: "", contact: "", subject: "", message: "" });
-        },
-        (error) => {
-          console.error("FAILED...", error);
-          setStatus("❌ Failed to send. Try again later.");
-        }
-      );
+Message:
+${form.message}`;
+
+    // Create the mailto link
+    const mailtoLink = `mailto:nknitishsingh92@gmail.com?subject=${encodeURIComponent(form.subject)}&body=${encodeURIComponent(emailBody)}`;
+    
+    // Open the email client
+    window.location.href = mailtoLink;
+
+    // Reset form
+    setTimeout(() => {
+      setStatus("✅ Mail app opened!");
+      setForm({ name: "", contact: "", subject: "", message: "" });
+    }, 2000);
   };
 
   const quickLinks = [
