@@ -33,7 +33,7 @@ const PROJECTS = [
     desc: 'A modern and responsive portfolio built with React and Framer Motion, showcasing projects, skills, and achievements with smooth animations and interactive UI.',
     ss: '/portfolio.jpg',
     tech: ['React', 'Framer Motion', 'CSS'],
-    live: 'https://nitish-portfolio-six.vercel.app',
+    live: 'https://nitish-portfolio-azure.vercel.app/',
     code: 'https://github.com/nknitishsingh94/Nitish-Portfolio'
   },
   {
