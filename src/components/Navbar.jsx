@@ -64,8 +64,8 @@ export default function Navbar() {
           className="desktop-nav-links"
           style={{
             display: "none",
-            justifyContent: "center",
-            gap: "1.8rem",
+            justifyContent: "flex-end", // Align to the right
+            gap: "2rem", // Slightly increased gap for better spacing
             alignItems: "center",
             flexGrow: 1,
           }}
