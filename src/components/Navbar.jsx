@@ -147,28 +147,30 @@ export default function Navbar() {
         </div>
       </nav>
 
-      {/* --- Mobile Navigation Menu --- */}
+      {/* --- Mobile Navigation Menu (Sidebar Drawer) --- */}
       <AnimatePresence>
         {isOpen && (
           <motion.div
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -20 }}
-            transition={{ duration: 0.3 }}
+            initial={{ opacity: 0, x: "100%" }}
+            animate={{ opacity: 1, x: 0 }}
+            exit={{ opacity: 0, x: "100%" }}
+            transition={{ type: "spring", stiffness: 300, damping: 30 }}
             style={{
               position: "fixed",
-              top: "70px",
-              left: 0,
-              width: "100%",
-              background: "rgba(10, 10, 10, 0.95)",
-              backdropFilter: "blur(10px)",
-              padding: "1rem 0",
+              top: 0,
+              right: 0,
+              width: "260px",
+              height: "100vh",
+              background: "rgba(15, 17, 20, 0.95)",
+              backdropFilter: "blur(15px)",
+              padding: "6rem 2rem 2rem",
               display: "flex",
               flexDirection: "column",
-              alignItems: "center",
-              gap: "1.5rem",
+              alignItems: "flex-start",
+              gap: "1.8rem",
               zIndex: 999,
-              borderBottom: "1px solid rgba(255,255,255,0.1)",
+              borderLeft: "1px solid rgba(255,255,255,0.1)",
+              boxShadow: "-10px 0 30px rgba(0,0,0,0.8)",
             }}
           >
             {links.map((l) => (
@@ -179,9 +181,12 @@ export default function Navbar() {
                 onClick={closeMenu}
                 style={({ isActive }) => ({
                   textDecoration: "none",
-                  color: isActive ? "var(--accent)" : "white",
+                  color: isActive ? "var(--accent)" : "#ccc",
                   fontSize: "1.2rem",
-                  fontWeight: isActive ? "bold" : "normal",
+                  fontWeight: isActive ? "bold" : "500",
+                  width: "100%",
+                  borderBottom: "1px solid rgba(255,255,255,0.05)",
+                  paddingBottom: "0.5rem"
                 })}
               >
                 {l.label}
