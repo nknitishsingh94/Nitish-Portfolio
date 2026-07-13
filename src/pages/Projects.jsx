@@ -53,13 +53,6 @@ const PROJECTS = [
   }
 ]
 
-const getScreenshotUrl = (project) => {
-  if (project.live && project.live !== '#' && project.live.startsWith('http')) {
-    return `https://v1.screenshot.11ty.dev/${encodeURIComponent(project.live)}/medium/`;
-  }
-  return project.ss || '/portfolio.jpg';
-};
-
 export default function Projects() {
   return (
     <motion.section
@@ -101,17 +94,27 @@ export default function Projects() {
                 boxShadow: '0 0 20px rgba(0,255,255,0.08)'
               }}
             >
-              <motion.div className="ss" whileHover={{ scale: 1.05 }} style={{ borderRadius: 12, overflow: 'hidden' }}>
+              <motion.div className="ss" whileHover={{ scale: 1.05 }} style={{ borderRadius: 12, overflow: 'hidden', position: 'relative' }}>
                 <img
-                  src={getScreenshotUrl(p)}
+                  src={p.ss}
                   alt={p.title}
                   style={{
                     width: '100%',
                     height: '200px',
-                    objectFit: 'fill',
-                    borderRadius: 12
+                    objectFit: 'cover',
+                    borderRadius: 12,
+                    boxShadow: '0 8px 20px rgba(0,0,0,0.6)',
+                    border: '1px solid rgba(255,255,255,0.08)'
                   }}
                 />
+                <div style={{
+                  position: 'absolute',
+                  inset: 0,
+                  background: 'linear-gradient(to top, rgba(0,255,255,0.1), transparent 50%, rgba(0,0,0,0.4))',
+                  borderRadius: 12,
+                  pointerEvents: 'none',
+                  mixBlendMode: 'overlay'
+                }}></div>
               </motion.div>
 
               <div style={{ marginTop: 12 }}>
