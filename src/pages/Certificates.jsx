@@ -8,8 +8,9 @@ const CERTS = {
       title: "Data Structure & Algorithm (Intermediate)",
       org: "TrainX",
       date: "Dec 2025",
-      img: "/certs/TrainX_DSA.png",
-      link: "/certs/TrainX_DSA.png",
+      img: "/certs/TrainX_DSA.png?v=2",
+      link: "/certs/TrainX_DSA.png?v=2",
+      rotate: true,
     },
     {
       title: "MERN Stack Training (45 Days)",
@@ -109,17 +110,28 @@ export default function Certificates() {
                   color: "#fff",
                 }}
               >
-                <img
-                  src={c.img}
-                  alt={c.title}
-                  style={{
-                    width: "100%",
-                    height: 160,
-                    borderRadius: 10,
-                    objectFit: "cover",
-                    marginBottom: 12,
-                  }}
-                />
+                <div style={{
+                  width: "100%",
+                  height: 160,
+                  borderRadius: 10,
+                  overflow: "hidden",
+                  marginBottom: 12,
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  backgroundColor: "#111"
+                }}>
+                  <img
+                    src={c.img}
+                    alt={c.title}
+                    style={{
+                      width: c.rotate ? "auto" : "100%",
+                      height: c.rotate ? "200%" : "100%",
+                      objectFit: "cover",
+                      transform: c.rotate ? "rotate(-90deg)" : "none",
+                    }}
+                  />
+                </div>
                 <strong style={{ fontSize: 16 }}>{c.title}</strong>
                 <div className="muted" style={{ fontSize: 13, color: "#bbb" }}>
                   {c.org} • {c.date}
@@ -172,9 +184,9 @@ export default function Certificates() {
             <motion.img
               src={selectedCert.img}
               alt={selectedCert.title}
-              initial={{ scale: 0.8 }}
-              animate={{ scale: 1 }}
-              exit={{ scale: 0.8 }}
+              initial={{ scale: 0.8, rotate: selectedCert.rotate ? -90 : 0 }}
+              animate={{ scale: 1, rotate: selectedCert.rotate ? -90 : 0 }}
+              exit={{ scale: 0.8, rotate: selectedCert.rotate ? -90 : 0 }}
               style={{
                 maxWidth: "90%",
                 maxHeight: "85%",
