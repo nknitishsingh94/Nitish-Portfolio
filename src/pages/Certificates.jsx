@@ -8,8 +8,8 @@ const CERTS = {
       title: "Data Structure & Algorithm (Intermediate)",
       org: "TrainX",
       date: "Dec 2025",
-      img: "/portfolio.jpg",
-      link: "/portfolio.jpg",
+      img: "/certs/TrainX_DSA.jpg",
+      link: "/certs/TrainX_DSA.jpg",
     },
     {
       title: "MERN Stack Training (45 Days)",
