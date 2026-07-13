@@ -44,12 +44,12 @@ export default function Navbar() {
             animate={{ scale: 1 }}
             transition={{ type: "spring", stiffness: 200 }}
             style={{
-              fontWeight: "bold",
-              fontSize: "1.4rem",
-              color: "var(--accent)",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
             }}
           >
-            NK
+            <img src="/ns-logo.png" alt="NS Logo" style={{ width: 40, height: 40, borderRadius: "50%" }} />
           </motion.div>
           <div style={{ display: "flex", flexDirection: "column" }}>
             <h1 style={{ margin: 0, fontSize: 14 }}>Nitish Singh</h1>
