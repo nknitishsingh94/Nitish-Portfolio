@@ -116,8 +116,7 @@ export default function Certificates() {
                     width: "100%",
                     height: 160,
                     borderRadius: 10,
-                    objectFit: "contain",
-                    backgroundColor: "#111",
+                    objectFit: "cover",
                     marginBottom: 12,
                   }}
                 />
