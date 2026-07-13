@@ -5,6 +5,20 @@ import { motion, AnimatePresence } from "framer-motion";
 const CERTS = {
   tech: [
     {
+      title: "Data Structure & Algorithm (Intermediate)",
+      org: "TrainX",
+      date: "Dec 2025",
+      img: "/certs/TrainX_DSA.jpg",
+      link: "/certs/TrainX_DSA.jpg",
+    },
+    {
+      title: "MERN Stack Training (45 Days)",
+      org: "Techpile Technology",
+      date: "Aug 2025",
+      img: "/certs/Techpile_MERN.jpg",
+      link: "/certs/Techpile_MERN.jpg",
+    },
+    {
       title: "MERN Stack",
       org: "Techpile",
       date: "2025",
@@ -18,11 +32,10 @@ const CERTS = {
       img: "/certs/Web Development.jpg",
       link: "/certs/Web Development.jpg",
     }
-    
   ],
   other: [
     {
-      title: "Programming inPython with AI",
+      title: "Programming in Python with AI",
       org: "Intersala",
       date: "2024",
       img: "/certs/WhatsApp Image 2025-11-11 at 00.23.48_72551b54.jpg",
