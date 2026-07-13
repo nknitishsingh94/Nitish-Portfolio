@@ -132,13 +132,13 @@ seeking opportunities to contribute to real-world full-stack projects.
         >
           <h4 style={{ fontSize: 20, color: "#00b4ff", marginBottom: 12 }}>💼 Projects</h4>
           <ul style={{ listStyle: "none", padding: 0, margin: 0, lineHeight: 1.8 }}>
-            <li>⚡ <strong>Smart10X Automation:</strong> Workflow and task automation website</li>
+            <li>⚡ <strong>Smart100X Automation:</strong> Workflow and task automation website</li>
             <li>💬 <strong>ZenXChat AI:</strong> Intelligent conversational AI chatbot (Gemini API)</li>
             <li>🏠 <strong>PropertyX:</strong> Premium real estate marketplace project (MERN stack)</li>
             <li>⛓️ <strong>Appointment Booking:</strong> MERN & Blockchain based booking system (In Progress)</li>
             <li>💼 <strong>Portfolio Website:</strong> Responsive React & Framer Motion portfolio</li>
             <li>☕ <strong>BrewHaven Cafe:</strong> Speciality cafe website with interactive menu & bookings</li>
-            <li>✨ <strong>HennaGlance:</strong> Creative mehndi artist portfolio and gallery website</li>
+            <li>✨ <strong>NfGlance:</strong> Creative mehndi artist portfolio and gallery website</li>
           </ul>
         </motion.div>
 
@@ -159,7 +159,7 @@ seeking opportunities to contribute to real-world full-stack projects.
               "Git",
               "ExpreesJs",
               ,"NodeJs",
-              ,"SOlidity"
+              ,"Solidity"
               ,"BlockChain",
               "Problem Solving",
               "Teamwork",
