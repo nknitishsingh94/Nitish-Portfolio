@@ -11,11 +11,10 @@ const PROJECTS = [
     live: 'https://property-x-seven.vercel.app/',
     code: 'https://github.com/nknitishsingh94/PropertyX'
   },
-
   {
     title: '⚡ Smart100X Automation',
     desc: 'A feature-rich workflow and process automation website designed to streamline tasks, manage schedules, and optimize business processes.',
-    ss: '/portfolio.jpg',
+    ss: '/automation.jpg',
     tech: ['React', 'Node.js', 'Express.js', 'Supabase', 'REST APIs', 'Talwind CSS'],
     live: 'https://dm-automation-roan.vercel.app',
     code: 'https://github.com/nknitishsingh94/DM-Automation'
@@ -39,7 +38,7 @@ const PROJECTS = [
   {
     title: '☕ BrewHaven Cafe',
     desc: 'A beautifully designed, fully responsive restaurant and specialty cafe website with an interactive menu, reservation booking, and custom customer reviews.',
-    ss: '/portfolio.jpg',
+    ss: '/cafe.jpg',
     tech: ['React', 'Framer Motion', 'CSS'],
     live: 'https://cafe-and-cake-bakery.vercel.app',
     code: 'https://github.com/nknitishsingh94/Cafe-and-Cake-Bakery'
@@ -47,7 +46,7 @@ const PROJECTS = [
   {
     title: '✨ NfGlance (Mehndi Artist Portfolio)',
     desc: 'A vibrant portfolio showcase website for a professional Nf artist, showcasing design galleries across multiple categories (Bridal, Festive) and integrated booking requests.',
-    ss: '/portfolio.jpg',
+    ss: '/mehndi.jpg',
     tech: ['React', 'Framer Motion', 'CSS'],
     live: 'https://mehandi-website-pi.vercel.app',
     code: 'https://github.com/nknitishsingh94/Mehandi-Website'
@@ -55,6 +54,9 @@ const PROJECTS = [
 ]
 
 const getScreenshotUrl = (project) => {
+  if (project.ss && project.ss !== '/portfolio.jpg') {
+    return project.ss;
+  }
   if (project.live && project.live !== '#' && project.live.startsWith('http')) {
     return `https://v1.screenshot.11ty.dev/${encodeURIComponent(project.live)}/medium/`;
   }
