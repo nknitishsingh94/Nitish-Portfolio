@@ -13,10 +13,10 @@ const PROJECTS = [
   },
 
   {
-    title: '⚡ Smart10X Automation',
+    title: '⚡ Smart100X Automation',
     desc: 'A feature-rich workflow and process automation website designed to streamline tasks, manage schedules, and optimize business processes.',
     ss: '/portfolio.jpg',
-    tech: ['React', 'Node.js', 'Express.js', 'Supabase', 'REST APIs'],
+    tech: ['React', 'Node.js', 'Express.js', 'Supabase', 'REST APIs', 'Talwind CSS'],
     live: 'https://dm-automation-roan.vercel.app',
     code: 'https://github.com/nknitishsingh94/DM-Automation'
   },
