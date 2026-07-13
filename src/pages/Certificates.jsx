@@ -25,16 +25,16 @@ const CERTS = {
       date: "2024",
       img: "/certs/Web Development.jpg",
       link: "/certs/Web Development.jpg",
-    }
-  ],
-  other: [
+    },
     {
       title: "Programming in Python with AI",
       org: "Intersala",
       date: "2024",
       img: "/certs/WhatsApp Image 2025-11-11 at 00.23.48_72551b54.jpg",
       link: "/certs/WhatsApp Image 2025-11-11 at 00.23.48_72551b54.jpg",
-    },
+    }
+  ],
+  other: [
     {
       title: "BlockChain",
       org: "",
