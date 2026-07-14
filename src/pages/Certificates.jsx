@@ -37,7 +37,7 @@ const CERTS = {
   other: [
     {
       title: "BlockChain",
-      org: "",
+      org: "Youtube Tutorials",
       date: "2025",
       img: "/certs/cert3.svg",
       link: "/certs/cert3.svg",
