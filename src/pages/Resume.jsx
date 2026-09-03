@@ -202,6 +202,7 @@ seeking opportunities to contribute to real-world full-stack projects.
               "Solidity",
               "Smart Contracts",
               "Blockchain",
+              "Web3",
               "Ethereum",
               "Bitcoin",
               "Problem Solving",

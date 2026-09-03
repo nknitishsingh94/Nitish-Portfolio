@@ -36,6 +36,7 @@ const ROWS = [
         "Full Stack Developer - MERN",
         "Blockchain Developer",
         "Smart Contracts",
+        "Web3",
       ],
     },
     {
