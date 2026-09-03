@@ -87,47 +87,11 @@ seeking opportunities to contribute to real-world full-stack projects.
           </motion.div>
         </motion.div>
 
-        {/* Education Section with Border Box */}
+        {/* Experience & Internships Section */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.6 }}
-          style={{
-            marginTop: 40,
-            border: "1px solid rgba(255,255,255,0.1)",
-            borderRadius: 12,
-            padding: "20px 24px",
-            background: "rgba(255,255,255,0.03)",
-          }}
-        >
-          <h4 style={{ fontSize: 20, color: "#00b4ff", marginBottom: 12 }}>
-            🎓 Education
-          </h4>
-          <ul style={{ listStyle: "none", padding: 0, margin: 0, lineHeight: 1.8 }}>
-            <li>
-              <strong>B.Tech in Computer Science Engineering</strong> —
-              (R.R. Group of Institute Lucknow), 2022–2026 <br />
-              <span style={{ color: "#aaa" }}>GPA: 7.5</span>
-            </li>
-            <li style={{ marginTop: 8 }}>
-              <strong>12th Board — Janta Inter Collage</strong> (Sohang Kushingar
-              UP Board, 2022) <br />
-              <span style={{ color: "#aaa" }}>Percentage: 74%</span>
-            </li>
-            <li style={{ marginTop: 8 }}>
-              <strong>10th Board — Janta Inter Collage</strong> (Sohang Kushingar
-              UP Board, 2020)
-              <br />
-              <span style={{ color: "#aaa" }}>Percentage: 78%</span>
-            </li>
-          </ul>
-        </motion.div>
-
-        {/* Experience & Internships */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.7 }}
           style={{
             marginTop: 40,
             border: "1px solid rgba(255,255,255,0.1)",
@@ -159,6 +123,42 @@ seeking opportunities to contribute to real-world full-stack projects.
             <li style={{ marginTop: 8 }}>
               <strong>Python Intern</strong> — Internshala <br />
               <span style={{ color: "#aaa" }}>Completed</span>
+            </li>
+          </ul>
+        </motion.div>
+
+        {/* Education Section with Border Box */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.7 }}
+          style={{
+            marginTop: 40,
+            border: "1px solid rgba(255,255,255,0.1)",
+            borderRadius: 12,
+            padding: "20px 24px",
+            background: "rgba(255,255,255,0.03)",
+          }}
+        >
+          <h4 style={{ fontSize: 20, color: "#00b4ff", marginBottom: 12 }}>
+            🎓 Education
+          </h4>
+          <ul style={{ listStyle: "none", padding: 0, margin: 0, lineHeight: 1.8 }}>
+            <li>
+              <strong>B.Tech in Computer Science Engineering</strong> —
+              (R.R. Group of Institute Lucknow), 2022–2026 <br />
+              <span style={{ color: "#aaa" }}>GPA: 7.5</span>
+            </li>
+            <li style={{ marginTop: 8 }}>
+              <strong>12th Board — Janta Inter Collage</strong> (Sohang Kushingar
+              UP Board, 2022) <br />
+              <span style={{ color: "#aaa" }}>Percentage: 74%</span>
+            </li>
+            <li style={{ marginTop: 8 }}>
+              <strong>10th Board — Janta Inter Collage</strong> (Sohang Kushingar
+              UP Board, 2020)
+              <br />
+              <span style={{ color: "#aaa" }}>Percentage: 78%</span>
             </li>
           </ul>
         </motion.div>
@@ -200,6 +200,7 @@ seeking opportunities to contribute to real-world full-stack projects.
               "Express.js",
               "Node.js",
               "Solidity",
+              "Smart Contracts",
               "Blockchain",
               "Ethereum",
               "Bitcoin",

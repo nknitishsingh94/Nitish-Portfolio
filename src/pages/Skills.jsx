@@ -33,8 +33,9 @@ const ROWS = [
       title: "Core Concepts",
       items: [
         "Data Structures & Algorithms",
-        "Full Stack Developer- MERN",
-        "BlockChain Developer ",
+        "Full Stack Developer - MERN",
+        "Blockchain Developer",
+        "Smart Contracts",
       ],
     },
     {
