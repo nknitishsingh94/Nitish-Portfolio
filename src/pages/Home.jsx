@@ -12,7 +12,7 @@ import facebookLogo from '../../public/facebook.png'
 
 export default function Home() {
   const professions = [
-    'Blockchain Devloper',
+    'Blockchain Developer',
     'Computer Science Engineer',
     "Full Stack Developer - MERN", 
   ]

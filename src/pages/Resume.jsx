@@ -123,6 +123,46 @@ seeking opportunities to contribute to real-world full-stack projects.
           </ul>
         </motion.div>
 
+        {/* Experience & Internships */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.7 }}
+          style={{
+            marginTop: 40,
+            border: "1px solid rgba(255,255,255,0.1)",
+            borderRadius: 12,
+            padding: "20px 24px",
+            background: "rgba(255,255,255,0.03)",
+          }}
+        >
+          <h4 style={{ fontSize: 20, color: "#00b4ff", marginBottom: 12 }}>
+            💼 Experience & Internships
+          </h4>
+          <ul style={{ listStyle: "none", padding: 0, margin: 0, lineHeight: 1.8 }}>
+            <li>
+              <strong>Full Stack Developer Intern</strong> — The Getnow Company (Remote) <br />
+              <span style={{ color: "#aaa" }}>March 2024 – Present</span>
+            </li>
+            <li style={{ marginTop: 8 }}>
+              <strong>Blockchain Development Trainee</strong> — Chroma Campus, Delhi <br />
+              <span style={{ color: "#aaa" }}>Ongoing</span>
+            </li>
+            <li style={{ marginTop: 8 }}>
+              <strong>MERN Stack Development Intern (45 Days)</strong> — Techpile <br />
+              <span style={{ color: "#aaa" }}>Completed</span>
+            </li>
+            <li style={{ marginTop: 8 }}>
+              <strong>Web Development Intern</strong> — Internshala <br />
+              <span style={{ color: "#aaa" }}>Completed</span>
+            </li>
+            <li style={{ marginTop: 8 }}>
+              <strong>Python Intern</strong> — Internshala <br />
+              <span style={{ color: "#aaa" }}>Completed</span>
+            </li>
+          </ul>
+        </motion.div>
+
         {/* Projects */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -157,10 +197,12 @@ seeking opportunities to contribute to real-world full-stack projects.
               "MySQL",
               "MongoDB",
               "Git",
-              "ExpreesJs",
-              ,"NodeJs",
-              ,"Solidity"
-              ,"BlockChain",
+              "Express.js",
+              "Node.js",
+              "Solidity",
+              "Blockchain",
+              "Ethereum",
+              "Bitcoin",
               "Problem Solving",
               "Teamwork",
               "Adaptability",

@@ -56,18 +56,18 @@ const AboutMe = () => {
             marginBottom: "1rem",
           }}
         >
-          Hi, I’m <strong>Nitish Singh</strong> — an aspiring{" "}
-          
-          <strong>Full Stack Developer-MERN</strong> who loves turning ideas
-          into intelligent systems. I’m deeply fascinated by how data and
-          algorithms can shape the future of healthcare, automation, and
-          creativity in technology.
-          <strong>BlockChain Devloper - intern</strong> and{" "}
+          Hi, I’m <strong>Nitish Singh</strong> — a passionate{" "}
+          <strong>Blockchain Developer</strong> and{" "}
+          <strong>Full Stack MERN Developer</strong>. I specialize in building{" "}
+          <strong>Decentralized Applications (dApps)</strong> and intelligent, 
+          scalable web systems. I’m deeply fascinated by how Web3, data, and 
+          modern algorithms can shape the future of decentralized tech, 
+          healthcare, and automation.
         </p>
 
         <p style={{ fontSize: "1.1rem", color: "rgba(255,255,255,0.8)" }}>
-          Beyond code, I enjoy exploring design, experimenting with motion and
-          interaction, and finding ways to blend{" "}
+          Beyond writing smart contracts and full-stack code, I enjoy exploring design, 
+          experimenting with motion, and finding ways to blend{" "}
           <strong>artistic creativity</strong> with{" "}
           <strong>technical precision</strong>. My goal is to build solutions
           that not only perform — but also inspire.
