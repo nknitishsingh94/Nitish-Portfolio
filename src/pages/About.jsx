@@ -57,7 +57,7 @@ const AboutMe = () => {
           }}
         >
           Hi, I’m <strong>Nitish Singh</strong> — a passionate{" "}
-          <strong>Blockchain Developer</strong>, <strong>Backend Developer</strong>, and{" "}
+          <strong>Blockchain Developer</strong>, <strong>Frontend Developer</strong>, <strong>Backend Developer</strong>, and{" "}
           <strong>Full Stack MERN Developer</strong>. I specialize in building{" "}
           <strong>Decentralized Applications (dApps)</strong> and intelligent, 
           scalable web systems. I’m deeply fascinated by how Web3, data, and 
