@@ -155,7 +155,7 @@ export default function Home() {
               lineHeight: '1.6',
             }}
           >
-            {"Computer Science Engineer | Frontend Developer | Full Stack Developer - MERN".split("").map((char, index) => (
+            {"Computer Science Engineer | Blockchain Developer | Full Stack Developer - MERN  | Frontend Developer | Backend Developer".split("").map((char, index) => (
               <motion.span
                 key={index}
                 initial={{ opacity: 0 }}
