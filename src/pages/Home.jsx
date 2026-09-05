@@ -14,7 +14,9 @@ export default function Home() {
   const professions = [
     'Blockchain Developer',
     'Computer Science Engineer',
+    'Frontend Developer'
     "Full Stack Developer - MERN",
+
 
   ]
 
@@ -226,14 +228,15 @@ export default function Home() {
             transition={{ delay: 1 }}
             style={{
               display: 'flex',
-              gap: '1rem',
+              gap: '0.8rem',
               flexWrap: 'wrap',
               marginTop: '1.2rem',
+              width: '100%',
             }}
           >
             {[
-              { label: '📍 Location', value: 'Lucknow, Uttar Pardesh,India' },
-              { label: '💼 Expertise', value: 'Full Stack,Problem solving' },
+              { label: '📍 Location', value: 'Lucknow, Uttar Pradesh' },
+              { label: '💼 Expertise', value: 'Full Stack, Problem Solving' },
               { label: '📧 Contact', value: 'nknitishsingh92@gmail.com' },
             ].map((info, i) => (
               <motion.div
@@ -243,18 +246,20 @@ export default function Home() {
                 style={{
                   background: 'rgba(255,255,255,0.05)',
                   borderRadius: '12px',
-                  padding: '12px 18px',
-                  minWidth: '180px',
+                  padding: '12px 10px',
+                  flex: 1,
+                  minWidth: '140px',
                   textAlign: 'center',
                   boxShadow: '0 0 10px rgba(0,255,200,0.08)',
                 }}
               >
-                <strong style={{ fontSize: '1rem' }}>{info.label}</strong>
+                <strong style={{ fontSize: '0.95rem' }}>{info.label}</strong>
                 <p
                   style={{
-                    fontSize: '0.9rem',
+                    fontSize: '0.85rem',
                     color: 'rgba(255,255,255,0.7)',
                     marginTop: '4px',
+                    wordBreak: 'break-word'
                   }}
                 >
                   {info.value}
