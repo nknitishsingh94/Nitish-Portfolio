@@ -31,7 +31,7 @@ export default function Home() {
     'Blockchain Developer',
     'Computer Science Engineer',
     "Full Stack Developer - MERN",
-    
+
   ]
 
   const quickLinks = [
@@ -163,10 +163,10 @@ export default function Home() {
           </h1>
 
           {/* --- Animated Rotating Roles --- */}
-          <div style={{ 
-            height: '40px', 
-            marginTop: '0.8rem', 
-            position: 'relative', 
+          <div style={{
+            height: '40px',
+            marginTop: '0.8rem',
+            position: 'relative',
             display: 'flex',
             alignItems: 'center'
           }}>
@@ -245,7 +245,7 @@ export default function Home() {
               marginTop: '1.2rem',
             }}
           >
-            {[ 
+            {[
               { label: '📍 Location', value: 'Lucknow, Uttar Pardesh,India' },
               { label: '💼 Expertise', value: 'Full Stack,Problem solving' },
               { label: '📧 Contact', value: 'nknitishsingh92@gmail.com' },
