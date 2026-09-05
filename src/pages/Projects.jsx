@@ -1,6 +1,6 @@
-import React, { useState } from 'react'
-import { motion, AnimatePresence } from 'framer-motion'
-import { Github, ExternalLink, ChevronLeft, ChevronRight } from 'lucide-react'
+import React from 'react'
+import { motion } from 'framer-motion'
+import { Github, ExternalLink } from 'lucide-react'
 
 const PROJECTS = [
   {
@@ -65,18 +65,6 @@ const getScreenshotUrl = (project) => {
 };
 
 export default function Projects() {
-  const [currentIndex, setCurrentIndex] = useState(0);
-
-  const nextProject = () => {
-    setCurrentIndex((prev) => (prev + 1) % PROJECTS.length);
-  };
-
-  const prevProject = () => {
-    setCurrentIndex((prev) => (prev - 1 + PROJECTS.length) % PROJECTS.length);
-  };
-
-  const p = PROJECTS[currentIndex];
-
   return (
     <motion.section
       className="container"
@@ -84,218 +72,180 @@ export default function Projects() {
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6 }}
       id="projects"
-      style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}
+      style={{ padding: '60px 20px', maxWidth: '1200px', margin: '0 auto' }}
     >
-      <div style={{ textAlign: 'center', marginBottom: '40px' }}>
+      <div style={{ textAlign: 'center', marginBottom: '50px' }}>
         <motion.h2
-          className="text-4xl font-bold mb-3"
+          className="text-4xl font-bold mb-4"
           initial={{ opacity: 0, y: -10 }}
           animate={{ opacity: 1, y: 0 }}
           style={{ 
-            background: 'linear-gradient(90deg, var(--accent), #fff)', 
-            WebkitBackgroundClip: 'text', 
-            color: 'transparent',
-            display: 'inline-block'
+            color: '#fff',
+            display: 'inline-block',
+            letterSpacing: '1px'
           }}
         >
-          Featured Projects
+          Featured <span style={{ color: 'var(--accent)' }}>Projects</span>
         </motion.h2>
-        <p style={{ fontSize: '1.1rem', color: 'rgba(255,255,255,0.6)' }}>
-          A collection of my major works — blending modern UI design with robust functionality.
+        <p style={{ fontSize: '1.1rem', color: 'rgba(255,255,255,0.6)', maxWidth: '600px', margin: '0 auto' }}>
+          Explore a collection of my latest work, showcasing expertise in modern web development and AI integration.
         </p>
       </div>
 
       <div style={{ 
-        position: 'relative', 
-        width: '100%', 
-        maxWidth: '1000px', 
-        margin: '0 auto',
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center',
-        padding: '0 10px'
+        display: 'grid', 
+        gridTemplateColumns: 'repeat(auto-fill, minmax(320px, 1fr))', 
+        gap: '30px', 
       }}>
-        
-        {/* Navigation Buttons */}
-        <button onClick={prevProject} style={{
-          position: 'absolute', left: '-20px', zIndex: 10,
-          background: 'rgba(255,255,255,0.1)', border: '1px solid rgba(255,255,255,0.2)',
-          borderRadius: '50%', padding: '15px', color: '#fff', cursor: 'pointer',
-          backdropFilter: 'blur(10px)', boxShadow: '0 5px 15px rgba(0,0,0,0.3)',
-          transition: 'all 0.3s'
-        }}
-        onMouseOver={e => e.currentTarget.style.background = 'var(--accent)'}
-        onMouseOut={e => e.currentTarget.style.background = 'rgba(255,255,255,0.1)'}
-        >
-          <ChevronLeft size={28} />
-        </button>
+        {PROJECTS.map((p, idx) => (
+          <motion.div
+            key={idx}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.4, delay: idx * 0.1 }}
+            whileHover={{ y: -6 }}
+            viewport={{ once: true, margin: '-50px' }}
+            style={{
+              background: 'rgba(20, 20, 25, 0.7)',
+              border: '1px solid rgba(255, 255, 255, 0.06)',
+              borderRadius: '20px',
+              padding: '20px',
+              display: 'flex',
+              flexDirection: 'column',
+              boxShadow: '0 10px 30px rgba(0,0,0,0.3)',
+              transition: 'border-color 0.3s ease, box-shadow 0.3s ease'
+            }}
+            onMouseOver={(e) => {
+              e.currentTarget.style.borderColor = 'rgba(0, 255, 200, 0.3)';
+              e.currentTarget.style.boxShadow = '0 15px 40px rgba(0, 255, 200, 0.08)';
+            }}
+            onMouseOut={(e) => {
+              e.currentTarget.style.borderColor = 'rgba(255, 255, 255, 0.06)';
+              e.currentTarget.style.boxShadow = '0 10px 30px rgba(0,0,0,0.3)';
+            }}
+          >
+            {/* Image Container */}
+            <div style={{ 
+              borderRadius: '12px', 
+              overflow: 'hidden', 
+              position: 'relative',
+              marginBottom: '20px'
+            }}>
+              <img
+                src={getScreenshotUrl(p)}
+                alt={p.title}
+                style={{
+                  width: '100%',
+                  height: '200px',
+                  objectFit: 'cover',
+                  objectPosition: 'top',
+                  display: 'block',
+                  transition: 'transform 0.5s ease'
+                }}
+                onMouseOver={(e) => e.currentTarget.style.transform = 'scale(1.05)'}
+                onMouseOut={(e) => e.currentTarget.style.transform = 'scale(1)'}
+              />
+              <div style={{
+                position: 'absolute',
+                inset: 0,
+                background: 'linear-gradient(to top, rgba(15,20,25,0.9) 0%, rgba(15,20,25,0) 50%)',
+                pointerEvents: 'none'
+              }}></div>
+            </div>
 
-        <button onClick={nextProject} style={{
-          position: 'absolute', right: '-20px', zIndex: 10,
-          background: 'rgba(255,255,255,0.1)', border: '1px solid rgba(255,255,255,0.2)',
-          borderRadius: '50%', padding: '15px', color: '#fff', cursor: 'pointer',
-          backdropFilter: 'blur(10px)', boxShadow: '0 5px 15px rgba(0,0,0,0.3)',
-          transition: 'all 0.3s'
-        }}
-        onMouseOver={e => e.currentTarget.style.background = 'var(--accent)'}
-        onMouseOut={e => e.currentTarget.style.background = 'rgba(255,255,255,0.1)'}
-        >
-          <ChevronRight size={28} />
-        </button>
+            {/* Content */}
+            <div style={{ display: 'flex', flexDirection: 'column', flex: 1 }}>
+              <h3 style={{ 
+                fontSize: '1.25rem', 
+                fontWeight: 600, 
+                color: '#fff', 
+                marginBottom: '10px',
+                letterSpacing: '0.5px'
+              }}>
+                {p.title}
+              </h3>
+              <p style={{ 
+                fontSize: '0.95rem', 
+                color: 'rgba(255,255,255,0.6)', 
+                marginBottom: '20px', 
+                lineHeight: 1.5,
+                flex: 1
+              }}>
+                {p.desc}
+              </p>
 
-        {/* Slider Card */}
-        <div style={{ width: '100%', overflow: 'hidden', borderRadius: 24, boxShadow: '0 20px 50px rgba(0,0,0,0.5)' }}>
-          <AnimatePresence mode="wait">
-            <motion.div
-              key={currentIndex}
-              initial={{ opacity: 0, x: 50, scale: 0.95 }}
-              animate={{ opacity: 1, x: 0, scale: 1 }}
-              exit={{ opacity: 0, x: -50, scale: 0.95 }}
-              transition={{ duration: 0.5, ease: 'easeInOut' }}
-              style={{
-                background: 'linear-gradient(145deg, rgba(30,35,45,0.9), rgba(15,20,25,1))',
-                backdropFilter: 'blur(20px)',
-                WebkitBackdropFilter: 'blur(20px)',
-                border: '1px solid rgba(255,255,255,0.1)',
-                display: 'flex',
-                flexDirection: 'column',
-                width: '100%'
-              }}
-            >
-              {/* Image Section */}
-              <div style={{ position: 'relative', width: '100%', height: '400px' }}>
-                <img
-                  src={getScreenshotUrl(p)}
-                  alt={p.title}
+              <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px', marginBottom: '24px' }}>
+                {p.tech.map((t) => (
+                  <span
+                    key={t}
+                    style={{
+                      background: 'rgba(255, 255, 255, 0.03)',
+                      border: '1px solid rgba(255, 255, 255, 0.08)',
+                      padding: '4px 12px',
+                      borderRadius: '12px',
+                      fontSize: '0.8rem',
+                      color: 'rgba(255,255,255,0.8)'
+                    }}
+                  >
+                    {t}
+                  </span>
+                ))}
+              </div>
+
+              {/* Buttons */}
+              <div style={{ display: 'flex', gap: '12px' }}>
+                <a
+                  href={p.code}
+                  target="_blank"
+                  rel="noreferrer"
                   style={{
-                    width: '100%',
-                    height: '100%',
-                    objectFit: 'cover',
-                    objectPosition: 'top'
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    gap: '6px',
+                    flex: 1,
+                    background: 'transparent',
+                    color: '#fff',
+                    padding: '10px 0',
+                    borderRadius: '10px',
+                    fontSize: '0.9rem',
+                    fontWeight: 500,
+                    border: '1px solid rgba(255,255,255,0.15)',
+                    textDecoration: 'none',
+                    transition: 'all 0.2s'
                   }}
-                />
-                <div style={{
-                  position: 'absolute',
-                  inset: 0,
-                  background: 'linear-gradient(to top, rgba(15,20,25,1) 0%, rgba(15,20,25,0) 40%)',
-                }}></div>
+                  onMouseOver={(e) => { e.currentTarget.style.background = 'rgba(255,255,255,0.05)' }}
+                  onMouseOut={(e) => { e.currentTarget.style.background = 'transparent' }}
+                >
+                  <Github size={16} /> Code
+                </a>
+                <a
+                  href={p.live}
+                  target="_blank"
+                  rel="noreferrer"
+                  style={{
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    gap: '6px',
+                    flex: 1,
+                    background: 'var(--accent)',
+                    color: '#000',
+                    padding: '10px 0',
+                    borderRadius: '10px',
+                    fontSize: '0.9rem',
+                    fontWeight: 600,
+                    textDecoration: 'none',
+                    transition: 'all 0.2s'
+                  }}
+                  onMouseOver={(e) => { e.currentTarget.style.opacity = '0.9' }}
+                  onMouseOut={(e) => { e.currentTarget.style.opacity = '1' }}
+                >
+                  <ExternalLink size={16} /> Live Demo
+                </a>
               </div>
-
-              {/* Content Section */}
-              <div style={{ padding: '30px 40px', marginTop: '-60px', position: 'relative', zIndex: 2 }}>
-                <h3 style={{ 
-                  fontSize: '2.2rem', 
-                  fontWeight: 700, 
-                  color: '#fff', 
-                  marginBottom: '1rem',
-                  textShadow: '0 0 20px rgba(255,255,255,0.2)'
-                }}>
-                  {p.title}
-                </h3>
-                <p style={{ 
-                  fontSize: '1.15rem', 
-                  color: 'rgba(255,255,255,0.8)', 
-                  marginBottom: '1.5rem', 
-                  lineHeight: 1.7,
-                  maxWidth: '800px'
-                }}>
-                  {p.desc}
-                </p>
-
-                <div style={{ display: 'flex', flexWrap: 'wrap', gap: '10px', marginBottom: '2rem' }}>
-                  {p.tech.map((t) => (
-                    <span
-                      key={t}
-                      style={{
-                        background: 'rgba(50, 215, 75, 0.15)',
-                        border: '1px solid rgba(50, 215, 75, 0.3)',
-                        padding: '6px 16px',
-                        borderRadius: 30,
-                        fontSize: '0.95rem',
-                        fontWeight: 600,
-                        color: 'var(--accent)'
-                      }}
-                    >
-                      {t}
-                    </span>
-                  ))}
-                </div>
-
-                <div style={{ display: 'flex', gap: '15px' }}>
-                  <motion.a
-                    href={p.code}
-                    target="_blank"
-                    rel="noreferrer"
-                    whileHover={{ scale: 1.05, background: 'rgba(255,255,255,0.1)' }}
-                    whileTap={{ scale: 0.95 }}
-                    style={{
-                      display: 'flex',
-                      alignItems: 'center',
-                      justifyContent: 'center',
-                      gap: '8px',
-                      flex: 1,
-                      maxWidth: '200px',
-                      background: 'rgba(255,255,255,0.05)',
-                      color: '#fff',
-                      padding: '12px 0',
-                      borderRadius: 14,
-                      fontSize: '1.05rem',
-                      fontWeight: 500,
-                      border: '1px solid rgba(255,255,255,0.2)',
-                      textDecoration: 'none',
-                      transition: 'background 0.3s'
-                    }}
-                  >
-                    <Github size={20} /> Source Code
-                  </motion.a>
-                  <motion.a
-                    href={p.live}
-                    target="_blank"
-                    rel="noreferrer"
-                    whileHover={{ scale: 1.05, boxShadow: '0 0 25px rgba(50, 215, 75, 0.5)' }}
-                    whileTap={{ scale: 0.95 }}
-                    style={{
-                      display: 'flex',
-                      alignItems: 'center',
-                      justifyContent: 'center',
-                      gap: '8px',
-                      flex: 1,
-                      maxWidth: '200px',
-                      background: 'var(--accent)',
-                      color: '#000',
-                      padding: '12px 0',
-                      borderRadius: 14,
-                      fontSize: '1.05rem',
-                      fontWeight: 700,
-                      textDecoration: 'none',
-                      boxShadow: '0 5px 20px rgba(50, 215, 75, 0.3)',
-                      transition: 'box-shadow 0.3s'
-                    }}
-                  >
-                    <ExternalLink size={20} /> Live Demo
-                  </motion.a>
-                </div>
-              </div>
-            </motion.div>
-          </AnimatePresence>
-        </div>
-      </div>
-      
-      {/* Dots Indicator */}
-      <div style={{ display: 'flex', justifyContent: 'center', gap: '10px', marginTop: '30px' }}>
-        {PROJECTS.map((_, idx) => (
-          <div 
-            key={idx} 
-            onClick={() => setCurrentIndex(idx)}
-            style={{ 
-              width: currentIndex === idx ? '30px' : '10px', 
-              height: '10px', 
-              borderRadius: '5px',
-              background: currentIndex === idx ? 'var(--accent)' : 'rgba(255,255,255,0.2)',
-              cursor: 'pointer',
-              transition: 'all 0.3s ease'
-            }} 
-          />
+            </div>
+          </motion.div>
         ))}
       </div>
     </motion.section>
