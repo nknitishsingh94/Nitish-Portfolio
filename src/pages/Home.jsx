@@ -16,7 +16,7 @@ export default function Home() {
     'Computer Science Engineer',
     'Frontend Developer',
     'Backend Developer',
-    "Full Stack Developer - MERN",
+    "Full Stack Developer - MERN"
 
 
   ]
