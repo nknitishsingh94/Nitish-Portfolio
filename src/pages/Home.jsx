@@ -1,5 +1,5 @@
-import React from 'react'
-import { motion } from 'framer-motion'
+import React, { useState, useEffect } from 'react'
+import { motion, AnimatePresence } from 'framer-motion'
 
 // 🖼️ Import Assets
 import photo from '../../public/IMG20250830164338.jpg'
@@ -11,10 +11,27 @@ import instagramLogo from '../../public/insta.png'
 import facebookLogo from '../../public/facebook.png'
 
 export default function Home() {
+  const allRoles = [
+    'Computer Science Engineer',
+    'Blockchain Developer',
+    'Full Stack Developer - MERN',
+    'Frontend Developer',
+    'Backend Developer'
+  ]
+  const [currentRole, setCurrentRole] = useState(0)
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentRole((prev) => (prev + 1) % allRoles.length)
+    }, 3000)
+    return () => clearInterval(interval)
+  }, [])
+
   const professions = [
     'Blockchain Developer',
     'Computer Science Engineer',
-    "Full Stack Developer - MERN", 
+    "Full Stack Developer - MERN",
+    
   ]
 
   const quickLinks = [
@@ -145,40 +162,41 @@ export default function Home() {
             </motion.span>
           </h1>
 
-          {/* --- Typing Animated Text --- */}
-          <p
-            style={{
-              fontSize: '1.2rem',
-              color: 'rgba(255,255,255,0.85)',
-              marginTop: '0.4rem',
-              maxWidth: '100%',
-              lineHeight: '1.6',
-            }}
-          >
-            {"Computer Science Engineer | Blockchain Developer | Full Stack Developer - MERN  | Frontend Developer | Backend Developer".split("").map((char, index) => (
-              <motion.span
-                key={index}
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ duration: 0.1, delay: index * 0.03 }}
-              >
-                {char}
-              </motion.span>
-            ))}
-            <motion.span
-              animate={{ opacity: [1, 0] }}
-              transition={{ duration: 0.8, repeat: Infinity, ease: 'linear' }}
-              style={{
-                display: 'inline-block',
-                width: '3px',
-                height: '1.2em',
-                backgroundColor: 'var(--accent)',
-                marginLeft: '4px',
-                verticalAlign: 'middle',
-                marginBottom: '-2px'
-              }}
-            />
-          </p>
+          {/* --- Animated Rotating Roles --- */}
+          <div style={{ 
+            height: '40px', 
+            marginTop: '0.8rem', 
+            position: 'relative', 
+            display: 'flex',
+            alignItems: 'center'
+          }}>
+            <span style={{ fontSize: '1.3rem', color: 'rgba(255,255,255,0.7)', marginRight: '8px' }}>
+              I am a
+            </span>
+            <div style={{ position: 'relative', flex: 1, height: '100%' }}>
+              <AnimatePresence mode="wait">
+                <motion.div
+                  key={currentRole}
+                  initial={{ y: 20, opacity: 0 }}
+                  animate={{ y: 0, opacity: 1 }}
+                  exit={{ y: -20, opacity: 0 }}
+                  transition={{ duration: 0.4, ease: "easeOut" }}
+                  style={{
+                    position: 'absolute',
+                    top: '50%',
+                    transform: 'translateY(-50%)',
+                    fontSize: '1.4rem',
+                    fontWeight: 600,
+                    color: 'var(--accent)',
+                    textShadow: '0 0 15px rgba(0,255,200,0.3)',
+                    whiteSpace: 'nowrap'
+                  }}
+                >
+                  {allRoles[currentRole]}
+                </motion.div>
+              </AnimatePresence>
+            </div>
+          </div>
 
           {/* --- Profession Tags --- */}
           <motion.div
