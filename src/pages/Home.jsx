@@ -14,7 +14,8 @@ export default function Home() {
   const professions = [
     'Blockchain Developer',
     'Computer Science Engineer',
-    'Frontend Developer'
+    'Frontend Developer',
+    'Backend Developer',
     "Full Stack Developer - MERN",
 
 
