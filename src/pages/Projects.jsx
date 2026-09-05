@@ -1,6 +1,6 @@
-import React from 'react'
-import { motion } from 'framer-motion'
-import { Github, ExternalLink } from 'lucide-react'
+import React, { useState } from 'react'
+import { motion, AnimatePresence } from 'framer-motion'
+import { Github, ExternalLink, ChevronLeft, ChevronRight } from 'lucide-react'
 
 const PROJECTS = [
   {
@@ -55,11 +55,9 @@ const PROJECTS = [
 
 const getScreenshotUrl = (project) => {
   const genericImages = ['/portfolio.jpg', '/automation.jpg', '/cafe.jpg', '/mehndi.jpg'];
-  // Use custom uploaded images if they exist
   if (project.ss && !genericImages.includes(project.ss)) {
     return project.ss;
   }
-  // Otherwise, automatically fetch a HIGH QUALITY screenshot of THEIR live website
   if (project.live && project.live !== '#' && project.live.startsWith('http')) {
     return `https://v1.screenshot.11ty.dev/${encodeURIComponent(project.live)}/large/`;
   }
@@ -67,6 +65,18 @@ const getScreenshotUrl = (project) => {
 };
 
 export default function Projects() {
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  const nextProject = () => {
+    setCurrentIndex((prev) => (prev + 1) % PROJECTS.length);
+  };
+
+  const prevProject = () => {
+    setCurrentIndex((prev) => (prev - 1 + PROJECTS.length) % PROJECTS.length);
+  };
+
+  const p = PROJECTS[currentIndex];
+
   return (
     <motion.section
       className="container"
@@ -74,129 +84,135 @@ export default function Projects() {
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6 }}
       id="projects"
+      style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}
     >
-      <div className="card" style={{ 
-        background: 'rgba(255,255,255,0.02)', 
-        backdropFilter: 'blur(20px)',
-        WebkitBackdropFilter: 'blur(20px)',
-        border: '1px solid rgba(255,255,255,0.08)',
-        borderRadius: 24, 
-        padding: '40px 30px',
-        boxShadow: '0 10px 40px rgba(0,0,0,0.3)'
-      }}>
+      <div style={{ textAlign: 'center', marginBottom: '40px' }}>
         <motion.h2
           className="text-4xl font-bold mb-3"
           initial={{ opacity: 0, y: -10 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.1 }}
           style={{ 
             background: 'linear-gradient(90deg, var(--accent), #fff)', 
             WebkitBackgroundClip: 'text', 
-            color: 'transparent' 
+            color: 'transparent',
+            display: 'inline-block'
           }}
         >
           Featured Projects
         </motion.h2>
-        <p className="mb-10" style={{ fontSize: '1.1rem', color: 'rgba(255,255,255,0.6)' }}>
+        <p style={{ fontSize: '1.1rem', color: 'rgba(255,255,255,0.6)' }}>
           A collection of my major works — blending modern UI design with robust functionality.
         </p>
+      </div>
 
-        <div className="projects-grid" style={{ 
-          display: 'grid', 
-          gridTemplateColumns: 'repeat(auto-fit, minmax(340px, 1fr))', 
-          gap: '40px', 
-          marginTop: '50px'
-        }}>
-          {PROJECTS.map((p, idx) => (
+      <div style={{ 
+        position: 'relative', 
+        width: '100%', 
+        maxWidth: '1000px', 
+        margin: '0 auto',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        padding: '0 10px'
+      }}>
+        
+        {/* Navigation Buttons */}
+        <button onClick={prevProject} style={{
+          position: 'absolute', left: '-20px', zIndex: 10,
+          background: 'rgba(255,255,255,0.1)', border: '1px solid rgba(255,255,255,0.2)',
+          borderRadius: '50%', padding: '15px', color: '#fff', cursor: 'pointer',
+          backdropFilter: 'blur(10px)', boxShadow: '0 5px 15px rgba(0,0,0,0.3)',
+          transition: 'all 0.3s'
+        }}
+        onMouseOver={e => e.currentTarget.style.background = 'var(--accent)'}
+        onMouseOut={e => e.currentTarget.style.background = 'rgba(255,255,255,0.1)'}
+        >
+          <ChevronLeft size={28} />
+        </button>
+
+        <button onClick={nextProject} style={{
+          position: 'absolute', right: '-20px', zIndex: 10,
+          background: 'rgba(255,255,255,0.1)', border: '1px solid rgba(255,255,255,0.2)',
+          borderRadius: '50%', padding: '15px', color: '#fff', cursor: 'pointer',
+          backdropFilter: 'blur(10px)', boxShadow: '0 5px 15px rgba(0,0,0,0.3)',
+          transition: 'all 0.3s'
+        }}
+        onMouseOver={e => e.currentTarget.style.background = 'var(--accent)'}
+        onMouseOut={e => e.currentTarget.style.background = 'rgba(255,255,255,0.1)'}
+        >
+          <ChevronRight size={28} />
+        </button>
+
+        {/* Slider Card */}
+        <div style={{ width: '100%', overflow: 'hidden', borderRadius: 24, boxShadow: '0 20px 50px rgba(0,0,0,0.5)' }}>
+          <AnimatePresence mode="wait">
             <motion.div
-              key={idx}
-              className="project-card"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: idx * 0.1 }}
-              whileHover={{ y: -10, scale: 1.02 }}
-              viewport={{ once: true, margin: '-50px' }}
+              key={currentIndex}
+              initial={{ opacity: 0, x: 50, scale: 0.95 }}
+              animate={{ opacity: 1, x: 0, scale: 1 }}
+              exit={{ opacity: 0, x: -50, scale: 0.95 }}
+              transition={{ duration: 0.5, ease: 'easeInOut' }}
               style={{
-                background: 'linear-gradient(145deg, rgba(30,35,45,0.8), rgba(15,20,25,0.95))',
+                background: 'linear-gradient(145deg, rgba(30,35,45,0.9), rgba(15,20,25,1))',
                 backdropFilter: 'blur(20px)',
                 WebkitBackdropFilter: 'blur(20px)',
                 border: '1px solid rgba(255,255,255,0.1)',
-                borderTop: '1px solid rgba(255,255,255,0.2)',
-                borderRadius: 24,
-                padding: '24px',
                 display: 'flex',
                 flexDirection: 'column',
-                overflow: 'hidden',
-                boxShadow: '0 15px 35px rgba(0,0,0,0.4)',
-                transition: 'all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275)'
+                width: '100%'
               }}
             >
-              <motion.div 
-                className="ss-container" 
-                style={{ 
-                  borderRadius: 14, 
-                  overflow: 'hidden', 
-                  position: 'relative',
-                  boxShadow: '0 5px 15px rgba(0,0,0,0.5)',
-                  marginBottom: '1.2rem'
-                }}
-              >
-                <motion.img
+              {/* Image Section */}
+              <div style={{ position: 'relative', width: '100%', height: '400px' }}>
+                <img
                   src={getScreenshotUrl(p)}
                   alt={p.title}
-                  whileHover={{ scale: 1.08 }}
-                  transition={{ duration: 0.5, ease: 'easeOut' }}
                   style={{
                     width: '100%',
-                    height: '240px',
+                    height: '100%',
                     objectFit: 'cover',
-                    objectPosition: 'top',
-                    borderRadius: 14,
-                    display: 'block'
+                    objectPosition: 'top'
                   }}
                 />
                 <div style={{
                   position: 'absolute',
                   inset: 0,
-                  background: 'linear-gradient(to top, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0) 60%)',
-                  borderRadius: 14,
-                  pointerEvents: 'none'
+                  background: 'linear-gradient(to top, rgba(15,20,25,1) 0%, rgba(15,20,25,0) 40%)',
                 }}></div>
-              </motion.div>
+              </div>
 
-              <div style={{ display: 'flex', flexDirection: 'column', flex: 1 }}>
+              {/* Content Section */}
+              <div style={{ padding: '30px 40px', marginTop: '-60px', position: 'relative', zIndex: 2 }}>
                 <h3 style={{ 
-                  fontSize: '1.5rem', 
+                  fontSize: '2.2rem', 
                   fontWeight: 700, 
                   color: '#fff', 
-                  marginBottom: '0.6rem',
-                  marginTop: '0.2rem',
-                  letterSpacing: '0.01em',
+                  marginBottom: '1rem',
                   textShadow: '0 0 20px rgba(255,255,255,0.2)'
                 }}>
                   {p.title}
                 </h3>
                 <p style={{ 
-                  fontSize: '1rem', 
-                  color: 'rgba(255,255,255,0.7)', 
+                  fontSize: '1.15rem', 
+                  color: 'rgba(255,255,255,0.8)', 
                   marginBottom: '1.5rem', 
-                  lineHeight: 1.6,
-                  flex: 1
+                  lineHeight: 1.7,
+                  maxWidth: '800px'
                 }}>
                   {p.desc}
                 </p>
 
-                <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px', marginBottom: '1.5rem' }}>
+                <div style={{ display: 'flex', flexWrap: 'wrap', gap: '10px', marginBottom: '2rem' }}>
                   {p.tech.map((t) => (
                     <span
                       key={t}
                       style={{
-                        background: 'rgba(50, 215, 75, 0.1)',
-                        border: '1px solid rgba(50, 215, 75, 0.2)',
-                        padding: '6px 14px',
+                        background: 'rgba(50, 215, 75, 0.15)',
+                        border: '1px solid rgba(50, 215, 75, 0.3)',
+                        padding: '6px 16px',
                         borderRadius: 30,
-                        fontSize: '0.9rem',
-                        fontWeight: 500,
+                        fontSize: '0.95rem',
+                        fontWeight: 600,
                         color: 'var(--accent)'
                       }}
                     >
@@ -205,7 +221,7 @@ export default function Projects() {
                   ))}
                 </div>
 
-                <div style={{ display: 'flex', gap: '12px' }}>
+                <div style={{ display: 'flex', gap: '15px' }}>
                   <motion.a
                     href={p.code}
                     target="_blank"
@@ -216,51 +232,71 @@ export default function Projects() {
                       display: 'flex',
                       alignItems: 'center',
                       justifyContent: 'center',
-                      gap: '6px',
+                      gap: '8px',
                       flex: 1,
+                      maxWidth: '200px',
                       background: 'rgba(255,255,255,0.05)',
                       color: '#fff',
-                      padding: '10px 0',
-                      borderRadius: 12,
-                      fontSize: '0.9rem',
+                      padding: '12px 0',
+                      borderRadius: 14,
+                      fontSize: '1.05rem',
                       fontWeight: 500,
-                      border: '1px solid rgba(255,255,255,0.1)',
+                      border: '1px solid rgba(255,255,255,0.2)',
                       textDecoration: 'none',
                       transition: 'background 0.3s'
                     }}
                   >
-                    <Github size={16} /> Code
+                    <Github size={20} /> Source Code
                   </motion.a>
                   <motion.a
                     href={p.live}
                     target="_blank"
                     rel="noreferrer"
-                    whileHover={{ scale: 1.05, boxShadow: '0 0 20px rgba(50, 215, 75, 0.4)' }}
+                    whileHover={{ scale: 1.05, boxShadow: '0 0 25px rgba(50, 215, 75, 0.5)' }}
                     whileTap={{ scale: 0.95 }}
                     style={{
                       display: 'flex',
                       alignItems: 'center',
                       justifyContent: 'center',
-                      gap: '6px',
+                      gap: '8px',
                       flex: 1,
+                      maxWidth: '200px',
                       background: 'var(--accent)',
                       color: '#000',
-                      padding: '10px 0',
-                      borderRadius: 12,
-                      fontSize: '0.9rem',
-                      fontWeight: 600,
+                      padding: '12px 0',
+                      borderRadius: 14,
+                      fontSize: '1.05rem',
+                      fontWeight: 700,
                       textDecoration: 'none',
-                      boxShadow: '0 4px 15px rgba(50, 215, 75, 0.2)',
+                      boxShadow: '0 5px 20px rgba(50, 215, 75, 0.3)',
                       transition: 'box-shadow 0.3s'
                     }}
                   >
-                    <ExternalLink size={16} /> Live App
+                    <ExternalLink size={20} /> Live Demo
                   </motion.a>
                 </div>
               </div>
             </motion.div>
-          ))}
+          </AnimatePresence>
         </div>
+      </div>
+      
+      {/* Dots Indicator */}
+      <div style={{ display: 'flex', justifyContent: 'center', gap: '10px', marginTop: '30px' }}>
+        {PROJECTS.map((_, idx) => (
+          <div 
+            key={idx} 
+            onClick={() => setCurrentIndex(idx)}
+            style={{ 
+              width: currentIndex === idx ? '30px' : '10px', 
+              height: '10px', 
+              borderRadius: '5px',
+              background: currentIndex === idx ? 'var(--accent)' : 'rgba(255,255,255,0.2)',
+              cursor: 'pointer',
+              transition: 'all 0.3s ease'
+            }} 
+          />
+        ))}
       </div>
     </motion.section>
   )
