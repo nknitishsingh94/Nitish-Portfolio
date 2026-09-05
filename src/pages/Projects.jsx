@@ -102,11 +102,10 @@ export default function Projects() {
         </p>
 
         <div className="projects-grid" style={{ 
-          display: 'flex', 
-          flexDirection: 'column', 
-          gap: '150px', 
-          marginTop: '60px',
-          paddingBottom: '20vh' 
+          display: 'grid', 
+          gridTemplateColumns: 'repeat(auto-fit, minmax(340px, 1fr))', 
+          gap: '40px', 
+          marginTop: '50px'
         }}>
           {PROJECTS.map((p, idx) => (
             <motion.div
@@ -115,22 +114,20 @@ export default function Projects() {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: idx * 0.1 }}
-              whileHover={{ scale: 1.01 }}
+              whileHover={{ y: -10, scale: 1.02 }}
               viewport={{ once: true, margin: '-50px' }}
               style={{
-                position: 'sticky',
-                top: `calc(12vh + ${idx * 25}px)`,
                 background: 'linear-gradient(145deg, rgba(30,35,45,0.8), rgba(15,20,25,0.95))',
                 backdropFilter: 'blur(20px)',
                 WebkitBackdropFilter: 'blur(20px)',
                 border: '1px solid rgba(255,255,255,0.1)',
                 borderTop: '1px solid rgba(255,255,255,0.2)',
                 borderRadius: 24,
-                padding: 30,
+                padding: '24px',
                 display: 'flex',
                 flexDirection: 'column',
                 overflow: 'hidden',
-                boxShadow: '0 -15px 40px rgba(0,0,0,0.5), 0 20px 40px rgba(0,255,255,0.05)',
+                boxShadow: '0 15px 35px rgba(0,0,0,0.4)',
                 transition: 'all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275)'
               }}
             >
@@ -151,8 +148,7 @@ export default function Projects() {
                   transition={{ duration: 0.5, ease: 'easeOut' }}
                   style={{
                     width: '100%',
-                    height: '40vh',
-                    minHeight: '280px',
+                    height: '240px',
                     objectFit: 'cover',
                     objectPosition: 'top',
                     borderRadius: 14,
@@ -170,21 +166,21 @@ export default function Projects() {
 
               <div style={{ display: 'flex', flexDirection: 'column', flex: 1 }}>
                 <h3 style={{ 
-                  fontSize: '1.8rem', 
+                  fontSize: '1.5rem', 
                   fontWeight: 700, 
                   color: '#fff', 
-                  marginBottom: '0.8rem',
-                  marginTop: '0.5rem',
-                  letterSpacing: '0.02em',
+                  marginBottom: '0.6rem',
+                  marginTop: '0.2rem',
+                  letterSpacing: '0.01em',
                   textShadow: '0 0 20px rgba(255,255,255,0.2)'
                 }}>
                   {p.title}
                 </h3>
                 <p style={{ 
-                  fontSize: '1.1rem', 
+                  fontSize: '1rem', 
                   color: 'rgba(255,255,255,0.7)', 
                   marginBottom: '1.5rem', 
-                  lineHeight: 1.7,
+                  lineHeight: 1.6,
                   flex: 1
                 }}>
                   {p.desc}
