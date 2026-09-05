@@ -11,22 +11,6 @@ import instagramLogo from '../../public/insta.png'
 import facebookLogo from '../../public/facebook.png'
 
 export default function Home() {
-  const allRoles = [
-    'Computer Science Engineer',
-    'Blockchain Developer',
-    'Full Stack Developer - MERN',
-    'Frontend Developer',
-    'Backend Developer'
-  ]
-  const [currentRole, setCurrentRole] = useState(0)
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentRole((prev) => (prev + 1) % allRoles.length)
-    }, 3000)
-    return () => clearInterval(interval)
-  }, [])
-
   const professions = [
     'Blockchain Developer',
     'Computer Science Engineer',
@@ -39,7 +23,7 @@ export default function Home() {
     { img: linkedinLogo, title: 'LinkedIn', link: 'https://www.linkedin.com/in/nitishsingh27' },
     { img: gmailLogo, title: 'Email', link: 'nknitishsingh92@gmail.com' },
     { img: whatsappLogo, title: 'WhatsApp', link: 'https://wa.me/+918960322825' },
-    { img: instagramLogo, title: 'Instagram', link: 'https://www.instagram.com/nitish-nk-8795' },
+    { img: instagramLogo, title: 'Instagram', link: 'https://www.instagram.com/nitish_nk_8795' },
     { img: facebookLogo, title: 'Facebook', link: 'https://www.facebook.com/nitish.singh.793931' },
   ]
 
@@ -162,41 +146,43 @@ export default function Home() {
             </motion.span>
           </h1>
 
-          {/* --- Animated Rotating Roles --- */}
-          <div style={{
-            height: '40px',
-            marginTop: '0.8rem',
-            position: 'relative',
-            display: 'flex',
-            alignItems: 'center'
-          }}>
-            <span style={{ fontSize: '1.3rem', color: 'rgba(255,255,255,0.7)', marginRight: '8px' }}>
-              I am a
-            </span>
-            <div style={{ position: 'relative', flex: 1, height: '100%' }}>
-              <AnimatePresence mode="wait">
-                <motion.div
-                  key={currentRole}
-                  initial={{ y: 20, opacity: 0 }}
-                  animate={{ y: 0, opacity: 1 }}
-                  exit={{ y: -20, opacity: 0 }}
-                  transition={{ duration: 0.4, ease: "easeOut" }}
-                  style={{
-                    position: 'absolute',
-                    top: '50%',
-                    transform: 'translateY(-50%)',
-                    fontSize: '1.4rem',
-                    fontWeight: 600,
-                    color: 'var(--accent)',
-                    textShadow: '0 0 15px rgba(0,255,200,0.3)',
-                    whiteSpace: 'nowrap'
-                  }}
-                >
-                  {allRoles[currentRole]}
-                </motion.div>
-              </AnimatePresence>
-            </div>
-          </div>
+          {/* --- Typing Animated Text --- */}
+          <p
+            style={{
+              fontSize: '1.15rem',
+              color: 'var(--accent)',
+              marginTop: '0.6rem',
+              maxWidth: '100%',
+              lineHeight: '1.8',
+              fontWeight: 500,
+              textShadow: '0 0 10px rgba(0,255,200,0.2)',
+            }}
+          >
+            {"Computer Science Engineer | Blockchain Developer | Full Stack Developer - MERN | Frontend Developer | Backend Developer".split("").map((char, index) => (
+              <motion.span
+                key={index}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 0.1, delay: index * 0.03 }}
+              >
+                {char}
+              </motion.span>
+            ))}
+            <motion.span
+              animate={{ opacity: [1, 0] }}
+              transition={{ duration: 0.8, repeat: Infinity, ease: 'linear' }}
+              style={{
+                display: 'inline-block',
+                width: '3px',
+                height: '1.2em',
+                backgroundColor: 'var(--accent)',
+                marginLeft: '6px',
+                verticalAlign: 'middle',
+                marginBottom: '-2px',
+                boxShadow: '0 0 8px var(--accent)'
+              }}
+            />
+          </p>
 
           {/* --- Profession Tags --- */}
           <motion.div
