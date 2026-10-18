@@ -172,6 +172,9 @@ seeking opportunities to contribute to real-world full-stack projects.
         >
           <h4 style={{ fontSize: 20, color: "#00b4ff", marginBottom: 12 }}>💼 Projects</h4>
           <ul style={{ listStyle: "none", padding: 0, margin: 0, lineHeight: 1.8 }}>
+            <li>📊 <strong>Report Matching Tool:</strong> Automated data reconciliation & discrepancy detection platform</li>
+            <li>⚖️ <strong>Legel AI (Wakalat AI):</strong> AI-powered legal intelligence, contract comparison & drafting platform</li>
+            <li>💜 <strong>Vibely:</strong> Intimate private messaging & connection platform (Website & Capacitor App)</li>
             <li>⚡ <strong>Smart100X Automation:</strong> Workflow and task automation website</li>
             <li>💬 <strong>ZenXChat AI:</strong> Intelligent conversational AI chatbot (Gemini API)</li>
             <li>🏠 <strong>PropertyX:</strong> Premium real estate marketplace project (MERN stack)</li>

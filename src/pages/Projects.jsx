@@ -4,6 +4,30 @@ import { Github, ExternalLink } from 'lucide-react'
 
 const PROJECTS = [
   {
+    title: '💜 Vibely (Website & App)',
+    desc: 'An intimate, zero-noise private sanctuary app and website for two souls to sync. Features real-time messaging, Little Notes, audio tracks & song sharing, moments vault, and private voice/video calls.',
+    ss: '/vibely.jpg',
+    tech: ['Next.js', 'React', 'Capacitor', 'Tailwind CSS', 'Supabase', 'WebRTC'],
+    live: 'https://vibely-sigma-roan.vercel.app/',
+    code: 'https://github.com/nknitishsingh94/vibely'
+  },
+  {
+    title: '⚖️ Legel AI (Wakalat AI)',
+    desc: 'An advanced AI legal intelligence platform featuring contract analysis, split-screen agreement comparison, automated legal drafting studio, and intelligent document workflows.',
+    ss: '/legel-ai.jpg',
+    tech: ['React', 'FastAPI', 'Python', 'Supabase', 'Tailwind CSS', 'Vite'],
+    live: 'https://legel-ai.vercel.app/',
+    code: 'https://github.com/nknitishsingh94/Legel_AI'
+  },
+  {
+    title: '📊 Report Matching & Reconciliation Tool',
+    desc: 'An automated enterprise report reconciliation and data matching web app designed to cross-verify master reports against multiple sub-reports with discrepancy detection and analytics.',
+    ss: '/report-matching.jpg',
+    tech: ['React', 'Node.js', 'Express', 'Tailwind CSS', 'Vite', 'CSV Parser'],
+    live: 'https://report-matching-luke.vercel.app/',
+    code: 'https://github.com/nknitishsingh94/Report-Matching-tool'
+  },
+  {
     title: '🏠 PropertyX (Real-estate Project)',
     desc: 'A premium MERN-stack real estate marketplace featuring property listings, advanced search filters, user profiles, and agent contact options.',
     ss: '/ISL.png',
@@ -16,7 +40,7 @@ const PROJECTS = [
     desc: 'A feature-rich workflow and process automation website designed to streamline tasks, manage schedules, and optimize business processes.',
     ss: '/automation.jpg',
     tech: ['React', 'Node.js', 'Express.js', 'Supabase', 'REST APIs', 'Talwind CSS'],
-    live: 'https://dm-automation-roan.vercel.app',
+    live: 'https://dm-automation-alpha.vercel.app',
     code: 'https://github.com/nknitishsingh94/DM-Automation'
   },
   {
