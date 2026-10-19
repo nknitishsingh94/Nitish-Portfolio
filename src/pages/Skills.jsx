@@ -3,13 +3,13 @@ import { motion } from "framer-motion";
 import "./Skills.css";
 
 const SKILLS = [
+  { name: "TypeScript", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" },
+  { name: "JavaScript", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" },
+  { name: "React", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" },
   { name: "Python", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" },
-  
   { name: "Java", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" },
   { name: "HTML", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" },
   { name: "CSS", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" },
-  { name: "JavaScript", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" },
-  { name: "React", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" },
   { name: "NodeJs", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" },
   { name: "Express", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg" },
   { name: "SQL", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/azuresqldatabase/azuresqldatabase-original.svg" },
@@ -23,8 +23,8 @@ const SKILLS = [
 
 const ROWS = [
   [
-    { title: "Programming Languages", items: ["Python", "Java"] },
-    { title: "Web Technologies", items: ["HTML", "CSS", "JavaScript", "React"] },
+    { title: "Programming Languages", items: ["TypeScript", "JavaScript", "Python", "Java"] },
+    { title: "Web Technologies", items: ["TypeScript", "React", "HTML", "CSS"] },
     { title: "Databases & Tools", items: ["MongoDB", "SQL", "MySQL", "Git"] },
     { title: "Frameworks & Libraries", items: ["NodeJs", "Express.js"] },
   ],

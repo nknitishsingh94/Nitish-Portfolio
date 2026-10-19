@@ -264,6 +264,7 @@ export default function Resume() {
             <p style={{ color: "#aaa", fontSize: 14, marginBottom: 8 }}><strong>Hard Skills:</strong></p>
             <div style={{ display: "flex", flexWrap: "wrap", gap: 10 }}>
               {[
+                "TypeScript",
                 "MERN Stack",
                 "React.js",
                 "Node.js",

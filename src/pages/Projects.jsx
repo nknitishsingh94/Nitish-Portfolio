@@ -5,9 +5,9 @@ import { Github, ExternalLink } from 'lucide-react'
 const PROJECTS = [
   {
     title: '💜 Vibely (Website & App)',
-    desc: 'An intimate, zero-noise private sanctuary app and website for two souls to sync. Features real-time messaging, Little Notes, audio tracks & song sharing, moments vault, and private voice/video calls.',
+    desc: 'An intimate, zero-noise private sanctuary app and website for two souls to sync. Built with TypeScript and Next.js, featuring real-time messaging, Little Notes, audio tracks & song sharing, moments vault, and private voice/video calls.',
     ss: '/vibely.jpg',
-    tech: ['Next.js', 'React', 'Capacitor', 'Tailwind CSS', 'Supabase', 'WebRTC'],
+    tech: ['TypeScript', 'Next.js', 'React', 'Capacitor', 'Tailwind CSS', 'Supabase', 'WebRTC'],
     live: 'https://vibely-sigma-roan.vercel.app/',
     code: 'https://github.com/nknitishsingh94/vibely'
   },
