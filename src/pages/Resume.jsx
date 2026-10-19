@@ -55,14 +55,14 @@ export default function Resume() {
             <h3 style={{ fontSize: 24, color: "#00b4ff", marginBottom: 4 }}>
               👨‍💻 Nitish Singh
             </h3>
-            <p style={{ margintop: 10, fontSize: 15, color: "#ccc" }}>
-              4th Year B.Tech — Computer Science Engineering | R.R. Group of Institute
+            <p style={{ marginTop: 8, fontSize: 15, color: "#ccc" }}>
+              4th Year B.Tech — Computer Science and Engineering | R.R Group of Institutions
             </p>
             <p style={{ margin: "4px 0", fontSize: 14, color: "#aaa" }}>
-              📍 Lucknow, Uttar Pardesh
+              📍 Lucknow, Uttar Pradesh
             </p>
             <p style={{ margin: "4px 0", fontSize: 14, color: "#aaa" }}>
-              ✉️ nknitishsingh92@gmail.com | 📞 +91 8960322825
+              ✉️ nknitishsingh92@gmail.com | 📞 (+91) 8795919866
             </p>
           </div>
 
@@ -73,18 +73,72 @@ export default function Resume() {
               borderRadius: 12,
               padding: "14px 20px",
               border: "1px solid rgba(255,255,255,0.1)",
-              maxWidth: 360,
+              maxWidth: 380,
               fontSize: 14,
               lineHeight: 1.6,
             }}
           >
-            <strong style={{ color: "#00b4ff" }}>Professional Summary:</strong>
+            <strong style={{ color: "#00b4ff" }}>About Me / Summary:</strong>
             <p style={{ marginTop: 6, color: "#ccc" }}>
-              4th-year B.Tech CSE student experienced in full-stack web development.
-Skilled in React.js, Node.js, Express, and MongoDB. Passionate about building scalable web applications and 
-seeking opportunities to contribute to real-world full-stack projects.
+              Enthusiastic and detail-oriented MERN Stack Developer with hands-on experience in building responsive and dynamic web applications. Skilled in React.js, Node.js, Express.js, and MongoDB, with a strong focus on API integration, and backend logic. Passionate about full-stack development, problem solving and AI.
             </p>
           </motion.div>
+        </motion.div>
+
+        {/* Achievements / Certifications Section */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.55 }}
+          style={{
+            marginTop: 40,
+            border: "1px solid rgba(255,255,255,0.1)",
+            borderRadius: 12,
+            padding: "20px 24px",
+            background: "rgba(255,255,255,0.03)",
+          }}
+        >
+          <h4 style={{ fontSize: 20, color: "#00b4ff", marginBottom: 12 }}>
+            🏅 Achievements & Certifications
+          </h4>
+          <ul style={{ listStyle: "none", padding: 0, margin: 0, lineHeight: 1.9 }}>
+            <li>
+              ✨ <strong>Completed MERN</strong> — TECHPILE Technology Pvt. Ltd
+            </li>
+            <li style={{ marginTop: 8 }}>
+              🐍 <strong>Completed Python Workshop</strong> — Internshala{" "}
+              <a
+                href="https://trainings.internshala.com/s/v/3449397/8caff99b"
+                target="_blank"
+                rel="noreferrer"
+                style={{ color: "#00b4ff", textDecoration: "none", marginLeft: 6 }}
+              >
+                [View Credential ↗]
+              </a>
+            </li>
+            <li style={{ marginTop: 8 }}>
+              💡 <strong>Solved 100+ problems on LeetCode</strong>{" "}
+              <a
+                href="https://leetcode.com/u/nitishsingh78004/"
+                target="_blank"
+                rel="noreferrer"
+                style={{ color: "#00b4ff", textDecoration: "none", marginLeft: 6 }}
+              >
+                [LeetCode Profile ↗]
+              </a>
+            </li>
+            <li style={{ marginTop: 8 }}>
+              ⭐ <strong>4-Star Coder in Python</strong> — HackerRank{" "}
+              <a
+                href="https://www.hackerrank.com/profile/nknitishsingh92"
+                target="_blank"
+                rel="noreferrer"
+                style={{ color: "#00b4ff", textDecoration: "none", marginLeft: 6 }}
+              >
+                [HackerRank Profile ↗]
+              </a>
+            </li>
+          </ul>
         </motion.div>
 
         {/* Experience & Internships Section */}
@@ -93,7 +147,7 @@ seeking opportunities to contribute to real-world full-stack projects.
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.6 }}
           style={{
-            marginTop: 40,
+            marginTop: 30,
             border: "1px solid rgba(255,255,255,0.1)",
             borderRadius: 12,
             padding: "20px 24px",
@@ -133,7 +187,7 @@ seeking opportunities to contribute to real-world full-stack projects.
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.7 }}
           style={{
-            marginTop: 40,
+            marginTop: 30,
             border: "1px solid rgba(255,255,255,0.1)",
             borderRadius: 12,
             padding: "20px 24px",
@@ -145,20 +199,17 @@ seeking opportunities to contribute to real-world full-stack projects.
           </h4>
           <ul style={{ listStyle: "none", padding: 0, margin: 0, lineHeight: 1.8 }}>
             <li>
-              <strong>B.Tech in Computer Science Engineering</strong> —
-              (R.R. Group of Institute Lucknow), 2022–2026 <br />
-              <span style={{ color: "#aaa" }}>GPA: 7.5</span>
+              <strong>B.Tech | R.Rgroup of institutions, Lucknow</strong> (2022–2026) <br />
+              <span style={{ color: "#ccc" }}>Field of Study: Computer Science and Engineering</span> <br />
+              <span style={{ color: "#00b4ff" }}>Current CGPA: 7.4 CGPA</span>
             </li>
-            <li style={{ marginTop: 8 }}>
-              <strong>12th Board — Janta Inter Collage</strong> (Sohang Kushingar
-              UP Board, 2022) <br />
-              <span style={{ color: "#aaa" }}>Percentage: 74%</span>
+            <li style={{ marginTop: 10 }}>
+              <strong>12th | J. Inter College (U.P Board)</strong> (2020–2022) <br />
+              <span style={{ color: "#aaa" }}>Aggregate: 74%</span>
             </li>
-            <li style={{ marginTop: 8 }}>
-              <strong>10th Board — Janta Inter Collage</strong> (Sohang Kushingar
-              UP Board, 2020)
-              <br />
-              <span style={{ color: "#aaa" }}>Percentage: 78%</span>
+            <li style={{ marginTop: 10 }}>
+              <strong>10th | J. Inter College (U.P Board)</strong> (2018–2020) <br />
+              <span style={{ color: "#aaa" }}>Aggregate: 78%</span>
             </li>
           </ul>
         </motion.div>
@@ -170,18 +221,33 @@ seeking opportunities to contribute to real-world full-stack projects.
           transition={{ delay: 0.8 }}
           style={{ marginTop: 40 }}
         >
-          <h4 style={{ fontSize: 20, color: "#00b4ff", marginBottom: 12 }}>💼 Projects</h4>
-          <ul style={{ listStyle: "none", padding: 0, margin: 0, lineHeight: 1.8 }}>
-            <li>📊 <strong>Report Matching Tool:</strong> Automated data reconciliation & discrepancy detection platform</li>
-            <li>⚖️ <strong>Legel AI (Wakalat AI):</strong> AI-powered legal intelligence, contract comparison & drafting platform</li>
-            <li>💜 <strong>Vibely:</strong> Intimate private messaging & connection platform (Website & Capacitor App)</li>
-            <li>⚡ <strong>Smart100X Automation:</strong> Workflow and task automation website</li>
-            <li>💬 <strong>ZenXChat AI:</strong> Intelligent conversational AI chatbot (Gemini API)</li>
-            <li>🏠 <strong>PropertyX:</strong> Premium real estate marketplace project (MERN stack)</li>
-            <li>⛓️ <strong>Appointment Booking:</strong> MERN & Blockchain based booking system (In Progress)</li>
-            <li>💼 <strong>Portfolio Website:</strong> Responsive React & Framer Motion portfolio</li>
-            <li>☕ <strong>BrewHaven Cafe:</strong> Speciality cafe website with interactive menu & bookings</li>
-            <li>✨ <strong>NfGlance:</strong> Creative mehndi artist portfolio and gallery website</li>
+          <h4 style={{ fontSize: 20, color: "#00b4ff", marginBottom: 12 }}>🚀 Key Projects</h4>
+          <ul style={{ listStyle: "none", padding: 0, margin: 0, lineHeight: 1.9 }}>
+            <li>
+              ⚡ <strong>Smart100X (Automation and Scheduling Website):</strong> Designed to help businesses automate customer engagement, increase lead conversions, reduce manual effort, and manage all customer interactions from a centralized platform.{" "}
+              <span style={{ color: "#00b4ff", fontSize: 13 }}>(Technology: MERN + Supabase)</span>{" "}
+              <a href="https://dm-automation-alpha.vercel.app" target="_blank" rel="noreferrer" style={{ color: "#00b4ff", textDecoration: "none" }}>[Live Demo ↗]</a>
+            </li>
+            <li style={{ marginTop: 12 }}>
+              🏠 <strong>Real-Estate Website (PropertyX):</strong> Developed a secure and efficient Real-Estate using MERN, utilizing randomization techniques to create suitable and practical use cases in real life.{" "}
+              <span style={{ color: "#00b4ff", fontSize: 13 }}>(Technology: MERN)</span>{" "}
+              <a href="https://property-x-seven.vercel.app" target="_blank" rel="noreferrer" style={{ color: "#00b4ff", textDecoration: "none" }}>[Live Demo ↗]</a>
+            </li>
+            <li style={{ marginTop: 12 }}>
+              💜 <strong>Vibely chat and calling Website:</strong> Built to help connect privately and chat with each other in private with real-time audio/video calls.{" "}
+              <span style={{ color: "#00b4ff", fontSize: 13 }}>(Technology: TypeScript, Next.js, WebRTC)</span>{" "}
+              <a href="https://vibely-sigma-roan.vercel.app" target="_blank" rel="noreferrer" style={{ color: "#00b4ff", textDecoration: "none" }}>[Live Demo ↗]</a>
+            </li>
+            <li style={{ marginTop: 12 }}>
+              ⚖️ <strong>Legel-AI Website:</strong> Provides informational legal assistance, contract analysis, and automated legal drafting with Gemini API.{" "}
+              <span style={{ color: "#00b4ff", fontSize: 13 }}>(Technology: React.js, CSS, JavaScript, Gemini API)</span>{" "}
+              <a href="https://legel-ai.vercel.app" target="_blank" rel="noreferrer" style={{ color: "#00b4ff", textDecoration: "none" }}>[Live Demo ↗]</a>
+            </li>
+            <li style={{ marginTop: 12 }}>
+              📊 <strong>Report-Matching Website:</strong> Developed a tool to compare master reports with multiple smaller reports using Caller IDs, extension numbers, and date-wise records.{" "}
+              <span style={{ color: "#00b4ff", fontSize: 13 }}>(Technology: React.js, CSS, JavaScript, Gemini API)</span>{" "}
+              <a href="https://report-matching-luke.vercel.app" target="_blank" rel="noreferrer" style={{ color: "#00b4ff", textDecoration: "none" }}>[Live Demo ↗]</a>
+            </li>
           </ul>
         </motion.div>
 
@@ -193,42 +259,73 @@ seeking opportunities to contribute to real-world full-stack projects.
           style={{ marginTop: 40 }}
         >
           <h4 style={{ fontSize: 20, color: "#00b4ff", marginBottom: 12 }}>⚙️ Skills</h4>
-          <div style={{ display: "flex", flexWrap: "wrap", gap: 10 }}>
-            {[
-              "Python",
-              "React",
-              "MySQL",
-              "MongoDB",
-              "Git",
-              "Express.js",
-              "Node.js",
-              "Solidity",
-              "Smart Contracts",
-              "Blockchain",
-              "Web3",
-              "Ethereum",
-              "Bitcoin",
-              "Problem Solving",
-              "Teamwork",
-              "Adaptability",
-              "Creativity",
-            ].map((skill) => (
-              <motion.span
-                key={skill}
-                whileHover={{ scale: 1.1, backgroundColor: "rgba(0,180,255,0.3)" }}
-                style={{
-                  background: "rgba(255,255,255,0.05)",
-                  padding: "6px 12px",
-                  borderRadius: 8,
-                  fontSize: 13,
-                  color: "#ccc",
-                }}
-              >
-                {skill}
-              </motion.span>
-            ))}
+
+          <div style={{ marginBottom: 16 }}>
+            <p style={{ color: "#aaa", fontSize: 14, marginBottom: 8 }}><strong>Hard Skills:</strong></p>
+            <div style={{ display: "flex", flexWrap: "wrap", gap: 10 }}>
+              {[
+                "MERN Stack",
+                "React.js",
+                "Node.js",
+                "Express.js",
+                "MongoDB",
+                "Supabase (SQL)",
+                "Blockchain (Basic)",
+                "Solidity",
+                "Python",
+                "Git & GitHub",
+                "DSA",
+                "OOP",
+                "DBMS",
+                "Communication Skills",
+              ].map((skill) => (
+                <motion.span
+                  key={skill}
+                  whileHover={{ scale: 1.1, backgroundColor: "rgba(0,180,255,0.3)" }}
+                  style={{
+                    background: "rgba(255,255,255,0.05)",
+                    padding: "6px 12px",
+                    borderRadius: 8,
+                    fontSize: 13,
+                    color: "#ccc",
+                  }}
+                >
+                  {skill}
+                </motion.span>
+              ))}
+            </div>
+          </div>
+
+          <div>
+            <p style={{ color: "#aaa", fontSize: 14, marginBottom: 8 }}><strong>Soft Skills:</strong></p>
+            <div style={{ display: "flex", flexWrap: "wrap", gap: 10 }}>
+              {[
+                "Problem Solving",
+                "Collaboration",
+                "Adaptability",
+                "Time Management",
+                "Leadership",
+                "Critical Thinking",
+              ].map((skill) => (
+                <motion.span
+                  key={skill}
+                  whileHover={{ scale: 1.1, backgroundColor: "rgba(0,180,255,0.3)" }}
+                  style={{
+                    background: "rgba(255,255,255,0.05)",
+                    padding: "6px 12px",
+                    borderRadius: 8,
+                    fontSize: 13,
+                    color: "#ccc",
+                  }}
+                >
+                  {skill}
+                </motion.span>
+              ))}
+            </div>
           </div>
         </motion.div>
+
+        {/* Coding & Social Profiles */}
         <motion.div
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
@@ -236,18 +333,20 @@ seeking opportunities to contribute to real-world full-stack projects.
           style={{
             display: "flex",
             justifyContent: "center",
-            gap: 30,
+            flexWrap: "wrap",
+            gap: 25,
             marginTop: 40,
           }}
         >
           {[
-            { name: "🏆 LeetCode", link: "https://leetcode.com/nitishsingh78004/" },
-            { name: "💻 GitHub", link: "https://github.com/nknitishsingh94" },
+            { name: "🏆 LeetCode", link: "https://leetcode.com/u/nitishsingh78004/" },
+            { name: "⭐ HackerRank", link: "https://www.hackerrank.com/profile/nknitishsingh92" },
+            { name: "💻 GitHub", link: "https://github.com/Nitish78004" },
             { name: "💼 LinkedIn", link: "https://www.linkedin.com/in/nitishsingh27/" },
           ].map((site) => (
             <motion.a
               key={site.name}
-              href={site.link}_2803
+              href={site.link}
               target="_blank"
               rel="noreferrer"
               whileHover={{ scale: 1.1, color: "#00b4ff" }}

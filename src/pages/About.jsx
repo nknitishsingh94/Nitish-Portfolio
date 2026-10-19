@@ -139,11 +139,11 @@ const AboutMe = () => {
                     marginBottom: "0.2rem",
                   }}
                 >
-                  <strong>R.R Group of Institute </strong> — Lucknow,
-                  Uttar Pardesh
+                  <strong>R.R Group of Institutions</strong> — Lucknow,
+                  Uttar Pradesh
                 </p>
                 <p style={{ color: "rgba(255,255,255,0.7)" }}>
-                  4th Year (Pursuing) | GPA: 7.5
+                  4th Year (Pursuing) | Current CGPA: 7.4
                 </p>
                 <p style={{ color: "rgba(255,255,255,0.7)" }}>2022 – 2026</p>
               </div>

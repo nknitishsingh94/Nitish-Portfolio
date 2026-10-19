@@ -22,10 +22,10 @@ export default function Home() {
   ]
 
   const quickLinks = [
-    { img: githubLogo, title: 'GitHub', link: 'https://github.com/nknitishsingh94' },
+    { img: githubLogo, title: 'GitHub', link: 'https://github.com/Nitish78004' },
     { img: linkedinLogo, title: 'LinkedIn', link: 'https://www.linkedin.com/in/nitishsingh27' },
-    { img: gmailLogo, title: 'Email', link: 'nknitishsingh92@gmail.com' },
-    { img: whatsappLogo, title: 'WhatsApp', link: 'https://wa.me/+918960322825' },
+    { img: gmailLogo, title: 'Email', link: 'mailto:nknitishsingh92@gmail.com' },
+    { img: whatsappLogo, title: 'WhatsApp', link: 'https://wa.me/+918795919866' },
     { img: instagramLogo, title: 'Instagram', link: 'https://www.instagram.com/nitish_nk_8795' },
     { img: facebookLogo, title: 'Facebook', link: 'https://www.facebook.com/nitish.singh.793931' },
   ]
